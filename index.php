@@ -1,4 +1,4 @@
 <?php
- header("location:app/view/todos/");
- exit;
+header("location:app/view/todos/");
+exit;
 ?>
