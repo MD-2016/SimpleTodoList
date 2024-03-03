@@ -1,0 +1,47 @@
+{
+    "packages": [
+        {
+            "name": "env/dotenv",
+            "version": "v2.0.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sabroan/php-dotenv.git",
+                "reference": "334b7ca7bb060ae3ef8b459b85a67a99419c061f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sabroan/php-dotenv/zipball/334b7ca7bb060ae3ef8b459b85a67a99419c061f",
+                "reference": "334b7ca7bb060ae3ef8b459b85a67a99419c061f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8"
+            },
+            "time": "2023-08-21T09:43:55+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Env\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A simple, tiny and lightweight PHP .env loader",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "support": {
+                "source": "https://github.com/sabroan/php-dotenv/tree/v2.0.0"
+            },
+            "install-path": "../env/dotenv"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

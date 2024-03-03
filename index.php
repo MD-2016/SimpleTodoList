@@ -1,4 +1,5 @@
 <?php
-header("location:app/view/todos/");
+require __DIR__ . "/vendor/autoload.php";
+header("location:app/view/");
 exit;
 ?>

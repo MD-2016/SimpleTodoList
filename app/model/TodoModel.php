@@ -1,6 +1,5 @@
 <?php
-namespace MD\model;
-use MD\config\Database;
+include("../config/db.php");
 
     class TodoModel extends Database {
         public function addTodo($todo, $data) {

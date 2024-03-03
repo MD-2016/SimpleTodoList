@@ -1,11 +1,10 @@
 <?php
-   namespace MD\views;
-   use MD\controller\TodoController;
+   include_once("../controller/TodoController.php");
 
    $todos = new TodoController();
    $todoItem = $todos->edit_Todo($_GET['id']);
 ?>
-<?php include "../../template/header.php"; ?>
+<?php include "../template/header.php"; ?>
 <style>
     .card {
         margin: 20px 0;
@@ -75,4 +74,4 @@
         <?php } ?>
     </ol>
 </div>
-<?php include "../../template/footer.php";?>
+<?php include "../template/footer.php";?>

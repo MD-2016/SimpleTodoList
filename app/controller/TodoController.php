@@ -1,6 +1,5 @@
 <?php
-namespace MD\controller;
-use MD\model\TodoModel;
+include_once("../model/TodoModel.php");
 
 class TodoController extends TodoModel {
     public function viewTodos() {
