@@ -6,7 +6,7 @@ include("../config/db.php");
             $date = date('y-m-d H-m-sa');
             $done = 0;
 
-            $sql = "INSERT INTO `todo`(`topic`, `task`, `is_done`, `add_date`)VALUE(?,?,?,?)";
+            $sql = "INSERT INTO `todo`(`topic`, `task`, `is_done`, `add_date`)VALUES(?,?,?,?)";
             $stmt = $this->connect()->prepare($sql);
             return $stmt->execute([$todo, $data, $done, $date]);
         }
@@ -17,7 +17,7 @@ include("../config/db.php");
             $stmt->execute();
             $results = $stmt->fetchAll();
 
-            return $stmt;
+            return $results;
         }
 
         public function editTodo($id) {
