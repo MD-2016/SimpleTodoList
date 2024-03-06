@@ -2,7 +2,6 @@
    include_once("../controller/TodoController.php");
 
    $todos = new TodoController();
-   $todoItem = $todos->edit_Todo($_GET['id']);
 ?>
 <?php include "../template/header.php"; ?>
 <style>
@@ -47,7 +46,7 @@
     <h2 class="text-center">All Todos</h2>
 
     <?php 
-        if(isset($_POST['delete_Todo'])) {
+        if(isset($_POST['delete_todo'])) {
             $id = $_POST['delete_id'];
 
             $deleteTodo = new TodoController();
@@ -68,7 +67,7 @@
                 <?= $todoItem['task'];?>
             </div>
             <a href="edit.php?id=<?= $todoItem['id']; ?>"><button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a> &nbsp;
-            <form action="" method="POST"><input type="hidden" name="delete_id" value="<?= $todo['id']; ?>"><button type="submit" name="delete_todo" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete </button></form>
+            <form action="" method="POST"><input type="hidden" name="delete_id" value="<?= $todoItem['id']; ?>"><button type="submit" name="delete_todo" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete </button></form>
             &nbsp;<span class="badge bg-primary rounded-pill"><?= $todoItem['add_date']; ?></span>
         </li>
         <?php } ?>

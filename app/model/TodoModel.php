@@ -29,10 +29,10 @@ include("../config/db.php");
             return $result;
         }
 
-        public function updateTodo($id, $topic, $data) {
-            $sql = "UPDATE `todo` SET topic = ?, task = ?, WHERE id = ?";
+        public function updateTodo($id, $topic, $task) {
+            $sql = "UPDATE `todo` SET `topic` = ?, `task` = ? WHERE `id` = ?";
             $stmt = $this->connect()->prepare($sql);
-            $result = $stmt->execute([$topic, $data, $id]);
+            $result = $stmt->execute([$topic, $task, $id]);
 
             header("location:index.php");
             return $result;

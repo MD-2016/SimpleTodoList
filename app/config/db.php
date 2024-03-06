@@ -1,5 +1,4 @@
 <?php
-include("config.php");
 
 
     class Database {
@@ -17,7 +16,7 @@ include("config.php");
                 return self::$pdo;*/
 
                 if($this->pdo == null) {
-                    $this->pdo = new PDO("sqlite:" . Config::DB_PATH);
+                    $this->pdo = new PDO("sqlite:../database/todoDB.sqlite3");
                 }
 
                 return $this->pdo;
