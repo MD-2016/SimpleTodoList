@@ -35,6 +35,7 @@ include("../config/db.php");
             $result = $stmt->execute([$topic, $task, $id]);
 
             header("location:index.php");
+            exit;
             return $result;
         }
 

@@ -1,5 +1,6 @@
 <?php
     include_once("../controller/TodoController.php");
+    ob_start();
 
 ?>
 
@@ -37,7 +38,7 @@
                 $task = $_POST['updatetask'];
 
                 $updatetask = new TodoController();
-                $$updatetask->update_Todo($id, $topic, $task);
+                $updatetask->update_Todo($id, $topic, $task);
             }
         ?>
 
