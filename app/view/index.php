@@ -1,7 +1,9 @@
 <?php
    include_once("../controller/TodoController.php");
+   include("../helpers/checker.php");
 
    $todos = new TodoController();
+   $checker = new Checker();
 ?>
 <?php include "../template/header.php"; ?>
 <style>
@@ -24,8 +26,19 @@
                     $topic = $_POST['topic'];
                     $task = $_POST['task'];
 
-                    $addTodo = new TodoController();
-                    $addTodo->add_Todo($topic,$task);
+                    try {
+                        if(is_string($topic) && is_string($task)) {
+                            $fixedInput = $checker->stripHTML($topic, $task);
+
+
+
+                            $addTodo = new TodoController();
+                            $addTodo->add_Todo($fixedInput[0],$fixedInput[1]);
+
+                        }
+                    } catch(Exception) {
+                        new Exception("Error processing input");
+                    }
                 }
             ?>
 

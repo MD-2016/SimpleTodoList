@@ -1,11 +1,11 @@
 <?php
     include_once("../controller/TodoController.php");
+    include("../helpers/checker.php");
     ob_start();
 
-?>
 
-<?php
     $tasks = new TodoController();
+    $checker = new Checker();
     $task = $tasks->edit_Todo($_GET['id']);
 
 ?>
@@ -37,9 +37,17 @@
                 $topic = $_POST['updatetopic'];
                 $task = $_POST['updatetask'];
 
-                $updatetask = new TodoController();
-                $updatetask->update_Todo($id, $topic, $task);
-            }
+                try {
+                    if(is_string($topic) && is_string($task)) {
+                        $fixedInput = $checker->stripHTML($topic, $task);
+                        $updatetask = new TodoController();
+                         $updatetask->update_Todo($id, $$fixedInput[0], $fixedInput[1]);
+
+                        }
+                    } catch(ErrorException $e) {
+                        throw new ErrorException("Error processing input " . $e->getMessage());
+                    } 
+                }
         ?>
 
         <form action="" method="post">
