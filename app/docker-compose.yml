@@ -7,11 +7,11 @@ services:
       dockerfile: "./Dockerfile"
     # Php site
     volumes:
-      - ./:/var/www/html
+      - .:/var/www/html
     
     
     # SQL
-      - /app/database/todoDB.sqlite3:/var/www/db/todoDB.sqlite3
+      - ./database/todoDB.sqlite3:/var/www/html/database/todoDB.sqlite3
   
     ports:
       - "8080:80"

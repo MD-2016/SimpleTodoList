@@ -10,14 +10,15 @@ RUN a2ensite 000-default.conf
 EXPOSE 80
 
 # Create folder for SQLite
-RUN mkdir /var/www/db
-RUN ls -la .
+RUN mkdir /var/www/db/
 
-#COPY app/database/todoDB.sqlite3 /var/www/db/todoDB.sqlite3
+COPY ./database/todoDB.sqlite3 /var/www/db/todoDB.sqlite3
+#COPY ./database/todoDB.sqlite3 /var/www/html/todoDB.sqlite3
 
 # Add permissions for writeable database
-#RUN chmod 777 /var/www/db
-#RUN chmod 777 /var/www/db/todoDB.sqlite3
+#RUN chmod 777 /var/html/database/todoDB.sqlite3
+RUN chmod 777 /var/www/db
+RUN chmod 777 /var/www/db/todoDB.sqlite3
 
 
-#CMD ["apachectl", "-D", "FOREGROUND"]
+CMD ["apachectl", "-D", "FOREGROUND"]

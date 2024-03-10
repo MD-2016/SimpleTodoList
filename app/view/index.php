@@ -6,16 +6,6 @@
    $checker = new Checker();
 ?>
 <?php include "../template/header.php"; ?>
-<style>
-    .card {
-        margin: 20px 0;
-    }
-    .areatext {
-        resize: none;
-        width: 100%;
-        height: 110px;
-    }
-</style>
 
 <div class="container">
     <div class="card">

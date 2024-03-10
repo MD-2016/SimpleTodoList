@@ -10,20 +10,6 @@
 
 ?>
 <?php include "../template/header.php"; ?>
-<style>
-    .card {
-        margin: 20px 0;
-    }
-
-    .areatext {
-        resize: none;
-        width: 100%;
-        height: 111px;
-    }
-    .back-btn{
-        margin: 30px 0;
-    }
-</style>
 
 <div class="container">
     <a href="index.php"><button class="btn btn-primary back-btn">Back</button></a>
