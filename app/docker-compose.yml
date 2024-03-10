@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  apache:
+    build: 
+      context: .
+      dockerfile: "./Dockerfile"
+    # Php site
+    volumes:
+      - ./:/var/www/html
+    
+    
+    # SQL
+      - /app/database/todoDB.sqlite3:/var/www/db/todoDB.sqlite3
+  
+    ports:
+      - "8080:80"
+    
+    environment:
+      - SQLITE_DATABASE_PATH=/var/www/db/todoDb.sqlite3
+
+    networks:
+      - backend
+
+    restart: always
+
+
+networks:
+  backend:
+    driver: bridge

@@ -6,5 +6,6 @@ services:
       container_name: php8site
       volumes:
         - ./:/var/www/html
+        - "./app/database/:/var/www/html/app/database/"
       ports:
         - "8080:80"
