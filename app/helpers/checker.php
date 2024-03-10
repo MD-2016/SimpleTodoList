@@ -11,10 +11,9 @@
         }
     }
 
-    static function stripHTML($topic, $task) {
-       $filterTopic = htmlentities($topic, ENT_QUOTES | ENT_HTML5, "UTF-8");
-       $filterTask = htmlentities($task, ENT_QUOTES | ENT_HTML5, "UTF-8");
+    static function stripHTML($textToBeStripped) {
+        $fixedText = htmlentities($textToBeStripped, ENT_QUOTES | ENT_HTML5, "UTF-8");
 
-       return array($filterTopic, $filterTask);
+        return $fixedText;
     }
  }

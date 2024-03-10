@@ -28,16 +28,14 @@
 
                     try {
                         if(is_string($topic) && is_string($task)) {
-                            $fixedInput = $checker->stripHTML($topic, $task);
-
-
-
+                            $fixedTopic = $checker->stripHTML($topic);
+                            $fixedTask = $checker->stripHTML($task); 
                             $addTodo = new TodoController();
-                            $addTodo->add_Todo($fixedInput[0],$fixedInput[1]);
+                            $addTodo->add_Todo($fixedTopic,$fixedTask);
 
                         }
-                    } catch(Exception) {
-                        new Exception("Error processing input");
+                    } catch(ErrorException) {
+                       throw new ErrorException("Error processing input");
                     }
                 }
             ?>

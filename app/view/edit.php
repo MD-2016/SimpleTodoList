@@ -39,9 +39,10 @@
 
                 try {
                     if(is_string($topic) && is_string($task)) {
-                        $fixedInput = $checker->stripHTML($topic, $task);
+                        $fixedTopic = $checker->stripHTML($topic);
+                        $fixedTask = $checker->stripHTML($task); 
                         $updatetask = new TodoController();
-                         $updatetask->update_Todo($id, $$fixedInput[0], $fixedInput[1]);
+                        $updatetask->update_Todo($id, $fixedTopic, $fixedTask);
 
                         }
                     } catch(ErrorException $e) {
