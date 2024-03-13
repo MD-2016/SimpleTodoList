@@ -8,8 +8,8 @@
             /*
             if(empty(self::$pdo)) {
                 try {
-                    self::$pdo = new PDO("sqlite:" . Config::DB_PATH);
-                } catch(PDOException $e) {
+                    self::$pdo = new PDO("sqlite:" . Config::D
+                } cat
                     echo "Error loading database: " . $e->getMessage();
                 }
                 self::$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -17,8 +17,10 @@
 
                 if($this->pdo == null) {
                     $this->pdo = new PDO("sqlite:../database/todoDB.sqlite3");
-                }
-
-                return $this->pdo;
+                    $table = "CREATE TABLE `todo` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `topic` TEXT NOT NULL, `task` TEXT NOT NULL, `is_done` BOOLEAN, `add_date` DATETIME";
+                    $run = $this->pdo->prepare($table);
+                    $run->execute();
+                    return $this->pdo;
             }
         }
+    }

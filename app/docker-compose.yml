@@ -17,13 +17,12 @@ services:
       - "8080:80"
     
     environment:
-      - SQLITE_DATABASE_PATH=/var/www/db/todoDb.sqlite3
+      - SQLITE_DATABASE_PATH=/var/www/db/todoDB.sqlite3
 
     networks:
       - backend
 
     restart: always
-
 
 networks:
   backend:

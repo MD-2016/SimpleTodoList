@@ -1,9 +1,0 @@
-FROM alpine:latest
-
-RUN apk --no-cache add sqlite
-
-WORKDIR /app/database/
-
-COPY /app/database/todoDB.sqlite3 /app/database/
-
-CMD ["sqlite", "/app/database/todoDB.sqlite3"]
