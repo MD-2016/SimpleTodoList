@@ -7,17 +7,17 @@ services:
       dockerfile: "./Dockerfile"
     # Php site
     volumes:
-      - .:/var/www/html
+      - ./database:/var/www/html/database
     
     
     # SQL
-      - ./database/todoDB.sqlite3:/var/www/html/database/todoDB.sqlite3
+     # - ./database/:/var/www/html/database/
   
     ports:
       - "8080:80"
     
-    environment:
-      - SQLITE_DATABASE_PATH=/var/www/db/todoDB.sqlite3
+    #environment:
+     # - SQLITE_DATABASE_PATH
 
     networks:
       - backend

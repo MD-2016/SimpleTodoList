@@ -17,9 +17,9 @@
 
                 if($this->pdo == null) {
                     $this->pdo = new PDO("sqlite:../database/todoDB.sqlite3");
-                    $table = "CREATE TABLE `todo` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `topic` TEXT NOT NULL, `task` TEXT NOT NULL, `is_done` BOOLEAN, `add_date` DATETIME";
-                    $run = $this->pdo->prepare($table);
-                    $run->execute();
+                    #$table = "CREATE TABLE `todo` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `topic` TEXT NOT NULL, `task` TEXT NOT NULL, `is_done` BOOLEAN, `add_date` DATETIME";
+                    #$run = $this->pdo->prepare($table);
+                    #$run->execute();
                     return $this->pdo;
             }
         }
